@@ -1,0 +1,75 @@
+$cor-primaria: #ff9800;
+$cor-secundaria: #009688;
+$cor-texto: #ffffff;
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: $cor-primaria;
+    color: $cor-texto;
+    padding: 15px;
+    text-align: center;
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+        
+        li {
+            display: inline;
+            margin: 0 15px;
+            
+            a {
+                color: $cor-texto;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.hero {
+    background: url('https://static.vecteezy.com/ti/fotos-gratis/p1/6026259-tranquilo-verao-ferias-ferias-paisagem-tropical-ilha-por-do-sol-praia-palms-shore-calmo-mar-areia-exotico-natureza-cenario-inspirador-e-pacifico-paisagem-marinha-reflexo-ceu-por-do-sol-foto.jpg') center/cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    h2 {
+        background: rgba(0, 0, 0, 0.5);
+        color: $cor-texto;
+        padding: 15px;
+        border-radius: 5px;
+    }
+}
+
+.produtos {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    
+    .produto {
+        background: $cor-secundaria;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        color: $cor-texto;
+        
+        img {
+            width: 100px;
+            height: auto;
+            border-radius: 5px;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: $cor-primaria;
+    color: $cor-texto;
+}
