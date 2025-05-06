@@ -1,0 +1,124 @@
+// Variáveis de cores
+$primary-color: #03b1cf;
+$secondary-color: #ffffff;
+$accent-color: #ff9800;
+$text-color: #333333;
+$background-color: #f8f9fa;
+
+// Estilos globais
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+// Cabeçalho
+header {
+  background-color: $accent-color;
+  border-bottom: 1px solid darken($background-color, 10%);
+  
+  a {
+    text-decoration: none;
+    color: $text-color;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// Seções
+section {
+  padding: 60px 0;
+}
+
+h1, h2, h5 {
+color: $primary-color;
+}
+
+p {
+  color: $text-color;
+}
+
+// Seção titulos
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $primary-color;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+// Hero Section (Seção Início)
+.hero-section {
+  background: url('../images/fundo_praia.jpg') no-repeat center center;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 3rem;
+
+  h1, p {
+    color: $secondary-color;
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    padding-left: 1rem;
+    text-align: center;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Cartões de produtos
+.card {
+  border: none;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-body {
+    text-align: center;
+  }
+}
+
+// Formulários
+form {
+  .form-control {
+    border-radius: 0;
+    margin-bottom: 15px;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: $secondary-color;
+    border: none;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Rodapé
+footer {
+  background-color: $accent-color;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}

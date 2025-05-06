@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlântica Store - Cadastro</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="custom-header py-3 mb-4">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+        <img src="images/logo_atlanticastore.jpg" alt="Logo Atlântica Store" width="50" height="50">
+        <span class="fs-4 ms-2">Atlântica Store</span>
+      </a>
+      <ul class="nav">
+        <li class="nav-item"><a href="index.html" class="nav-link link-dark px-2">Início</a></li>
+        <li class="nav-item"><a href="produtos.html" class="nav-link link-dark px-2">Produtos</a></li>
+        <li class="nav-item"><a href="cadastro.html" class="nav-link link-dark px-2">Cadastro</a></li>
+        <li class="nav-item"><a href="carrinho.html" class="nav-link link-dark px-2">Carrinho</a></li>
+        <li class="nav-item"><a href="contato.html" class="nav-link link-dark px-2">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Formulário de Cadastro -->
+  <section class="container my-5">
+    <h2 class="section-title text-center mb-4">Cadastro de Cliente</h2>
+    <form class="row g-3">
+
+      <div class="col-md-6">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="sobrenome" class="form-label">Sobrenome</label>
+        <input type="text" class="form-control" id="sobrenome" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="telefone" class="form-label">Telefone</label>
+        <input type="tel" class="form-control" id="telefone" placeholder="(00) 00000-0000" required>
+      </div>
+
+      <div class="col-12">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+
+      <div class="col-12">
+        <label for="endereco" class="form-label">Endereço</label>
+        <input type="text" class="form-control" id="endereco" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="confirmarEmail" class="form-label">Confirmar E-mail</label>
+        <input type="email" class="form-control" id="confirmarEmail" required>
+      </div>
+
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
+      </div>
+
+    </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="text-center py-4 mt-5">
+    <p>&copy; 2025 Atlântica Store. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

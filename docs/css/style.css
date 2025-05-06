@@ -1,0 +1,99 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ff9800;
+  border-bottom: 1px solid #dae0e5;
+}
+header a {
+  text-decoration: none;
+  color: #333333;
+}
+header a:hover {
+  color: #03b1cf;
+}
+
+section {
+  padding: 60px 0;
+}
+
+h1, h2, h5 {
+  color: #03b1cf;
+}
+
+p {
+  color: #333333;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #03b1cf;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero-section {
+  background: url("../images/fundo_praia.jpg") no-repeat center center;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 3rem;
+}
+.hero-section h1, .hero-section p {
+  color: #ffffff;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .hero-section {
+    padding-left: 1rem;
+    text-align: center;
+  }
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  .hero-section p {
+    font-size: 1rem;
+  }
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card .card-body {
+  text-align: center;
+}
+
+form .form-control {
+  border-radius: 0;
+  margin-bottom: 15px;
+}
+form button {
+  background-color: #03b1cf;
+  color: #ffffff;
+  border: none;
+}
+form button:hover {
+  background-color: #02869d;
+}
+
+footer {
+  background-color: #ff9800;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}/*# sourceMappingURL=style.css.map */
