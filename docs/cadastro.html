@@ -28,61 +28,50 @@
 
   <!-- Formulário de Cadastro -->
   <section class="container my-5">
-    <h2 class="section-title text-center mb-4">Cadastro de Cliente</h2>
-    <form class="row g-3">
+  <h2 class="section-title text-center mb-4">Cadastro de Produto</h2>
 
-      <div class="col-md-6">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" required>
-      </div>
+  <form id="produtoForm" class="row g-3" enctype="multipart/form-data">
+    <div class="col-md-6">
+      <label for="nome" class="form-label">Nome do Produto</label>
+      <input type="text" class="form-control" id="nome" name="nome" required>
+    </div>
 
-      <div class="col-md-6">
-        <label for="sobrenome" class="form-label">Sobrenome</label>
-        <input type="text" class="form-control" id="sobrenome" required>
-      </div>
+    <div class="col-md-6">
+      <label for="preco" class="form-label">Preço</label>
+      <input type="number" class="form-control" id="preco" name="preco" step="0.01" required>
+    </div>
 
-      <div class="col-md-6">
-        <label for="cpf" class="form-label">CPF</label>
-        <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required>
-      </div>
+    <div class="col-md-6">
+      <label for="forma_pagamento" class="form-label">Forma de Pagamento</label>
+      <input type="text" class="form-control" id="forma_pagamento" name="forma_pagamento" required>
+    </div>
 
-      <div class="col-md-6">
-        <label for="telefone" class="form-label">Telefone</label>
-        <input type="tel" class="form-control" id="telefone" placeholder="(00) 00000-0000" required>
-      </div>
+    <div class="col-md-6">
+      <label for="quantidade" class="form-label">Quantidade</label>
+      <input type="number" class="form-control" id="quantidade" name="quantidade" required>
+    </div>
 
-      <div class="col-12">
-        <label for="email" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="email" required>
-      </div>
+    <div class="col-12">
+      <label for="imagem" class="form-label">Imagem do Produto</label>
+      <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*">
+    </div>
 
-      <div class="col-12">
-        <label for="endereco" class="form-label">Endereço</label>
-        <input type="text" class="form-control" id="endereco" required>
-      </div>
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-success mt-3">Cadastrar Produto</button>
+    </div>
+  </form>
 
-      <div class="col-md-6">
-        <label for="senha" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="senha" required>
-      </div>
+  <hr class="my-4">
+  <h3 class="text-center mb-3">Lista de Produtos</h3>
+  <div id="produtosList" class="row"></div>
+</section>
 
-      <div class="col-md-6">
-        <label for="confirmarEmail" class="form-label">Confirmar E-mail</label>
-        <input type="email" class="form-control" id="confirmarEmail" required>
-      </div>
-
-      <div class="col-12 text-center">
-        <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
-      </div>
-
-    </form>
-  </section>
 
   <!-- Rodapé -->
   <footer class="text-center py-4 mt-5">
     <p>&copy; 2025 Atlântica Store. Todos os direitos reservados.</p>
   </footer>
 </div>
-<script src="js/app.js"></script>
+<script type="module" src="js/app.js"></script>
 </body>
 </html>

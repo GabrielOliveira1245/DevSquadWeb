@@ -1,3 +1,4 @@
+import { inicializarProdutoCRUD } from "./produtos.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll("a.nav-link");
@@ -12,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const novoConteudo = doc.getElementById("conteudo").innerHTML;
       conteudo.innerHTML = novoConteudo;
       window.history.pushState({}, "", pagina);
+
+      // Verifica se é a página de cadastro de produto
+      if (doc.getElementById("produtoForm")) {
+      inicializarProdutoCRUD();
+      }
+
     } catch (error) {
       conteudo.innerHTML = "<p>Erro ao carregar página.</p>";
     }
