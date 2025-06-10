@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::apiResource('produtos', ProdutoController::class);
+Route::get('/teste', [ProdutoController::class, 'teste']);

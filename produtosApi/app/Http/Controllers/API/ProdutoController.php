@@ -11,8 +11,17 @@ use Illuminate\Support\Facades\Validator;
 class ProdutoController extends Controller
 {
     /**
+ * Endpoint de teste.
+ */
+    public function teste()
+    {
+    return response('API funcionando', 200);
+    }
+    
+    /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         $produtos = Produto::all();

@@ -1,11 +1,16 @@
 console.log("produtos.js carregado");
+
 export function inicializarProdutoCRUD() {
-    console.log("Função inicializarProdutoCRUD disponível");
+  console.log("Função inicializarProdutoCRUD executada");
+
   const form = document.getElementById("produtoForm");
   const lista = document.getElementById("produtosList");
-  const apiUrl = "http://127.0.0.1:8000/api/produtos";
+  const apiUrl = "http://localhost:8000/api/produtos"; // ajuste se necessário
 
-  if (!form || !lista) return;
+  if (!form || !lista) {
+    console.warn("Formulário ou lista não encontrados.");
+    return;
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -14,14 +19,21 @@ export function inicializarProdutoCRUD() {
     try {
       const response = await fetch(apiUrl, {
         method: "POST",
-        body: formData
+        body: formData,
       });
 
       const data = await response.json();
-      alert(data.message || "Produto cadastrado!");
+
+      if (!response.ok) {
+        alert(data.message || "Erro ao cadastrar produto.");
+        return;
+      }
+
+      alert(data.message || "Produto cadastrado com sucesso!");
       form.reset();
-      carregarProdutos();
+      
     } catch (err) {
+      console.error("Erro ao cadastrar produto:", err);
       alert("Erro ao cadastrar produto.");
     }
   });
@@ -32,41 +44,54 @@ export function inicializarProdutoCRUD() {
       const data = await response.json();
       lista.innerHTML = "";
 
-      data.data.forEach(prod => {
+      data.data.forEach((produto) => {
         const card = document.createElement("div");
         card.className = "col-md-4 mb-4";
 
+        const imagemUrl = produto.imagem
+      
+
+
         card.innerHTML = `
           <div class="card h-100">
-            ${prod.imagem_url ? `<img src="${prod.imagem_url}" class="card-img-top">` : ""}
+            ${imagemUrl ? `<img src="${imagemUrl}" class="card-img-top" alt="Imagem do Produto">` : ""}
             <div class="card-body">
-              <h5 class="card-title">${prod.nome}</h5>
-              <p class="card-text">Preço: R$ ${prod.preco}</p>
-              <p class="card-text">Pagamento: ${prod.forma_pagamento}</p>
-              <p class="card-text">Qtd: ${prod.quantidade}</p>
-              <button class="btn btn-danger btn-sm" onclick="excluirProduto(${prod.id})">Excluir</button>
+              <h5 class="card-title">${produto.nome}</h5>
+              <p class="card-text">Preço: R$ ${parseFloat(produto.preco).toFixed(2)}</p>
+              <p class="card-text">Pagamento: ${produto.forma_pagamento}</p>
+              <p class="card-text">Qtd: ${produto.quantidade}</p>
+              <button class="btn btn-danger btn-sm" data-id="${produto.id}">Excluir</button>
             </div>
           </div>
         `;
+
+        const botaoExcluir = card.querySelector("button");
+        botaoExcluir.addEventListener("click", () => excluirProduto(produto.id));
 
         lista.appendChild(card);
       });
     } catch (err) {
       console.error("Erro ao carregar produtos:", err);
+      alert("123.");
     }
   }
 
-  window.excluirProduto = async function (id) {
+  async function excluirProduto(id) {
     if (!confirm("Deseja realmente excluir este produto?")) return;
 
     try {
-      await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
-      alert("Produto excluído.");
-      carregarProdutos();
+      const response = await fetch(`${apiUrl}/${id}`, {
+        method: "DELETE",
+      });
+
+      const data = await response.json();
+      alert(data.message || "Produto excluído.");
+      
     } catch (err) {
+      console.error("Erro ao excluir produto:", err);
       alert("Erro ao excluir produto.");
     }
-  };
+  }
 
   carregarProdutos();
 }
