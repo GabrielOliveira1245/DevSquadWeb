@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Atlântica Store - Início</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 <div id="conteudo">
-<!-- Cabeçalho -->
+  <!-- Cabeçalho -->
   <header class="custom-header py-3">
     <div class="container d-flex flex-wrap justify-content-between align-items-center">
       <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-        <img src="images/logo_atlanticastore.jpg" alt="Logo Atlântica Store" width="50" height="50">
+        <img src="images/logo_atlanticastore.jpg" alt="Logo Atlântica Store" width="50" height="50"/>
         <span class="fs-4 ms-2">Atlântica Store</span>
       </a>
       <ul class="nav">
@@ -27,44 +27,18 @@
   </header>
 
   <!-- Seção de boas-vindas -->
-  <section id="inicio" class="hero-section">
-    <div>
+  <section id="inicio" class="hero-section text-center bg-light py-5">
+    <div class="container">
       <h1>Bem-vindo à Atlântica Store!</h1>
-      <p>Seu verão mais completo com nossos artigos de praia!</p>
+      <p class="lead">Seu verão mais completo com nossos artigos de praia!</p>
     </div>
   </section>
 
   <!-- Destaques -->
   <section class="container my-5">
     <h2 class="section-title text-center mb-4">Destaques</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/canga_estampada.jpg" class="card-img-top" alt="Produto 1">
-          <div class="card-body">
-            <h5 class="card-title">Canga Estampada</h5>
-            <p class="card-text">R$ 79,90</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/chapeu_panama.jpg" class="card-img-top" alt="Produto 2">
-          <div class="card-body">
-            <h5 class="card-title">Chapéu Panamá</h5>
-            <p class="card-text">R$ 89,90</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/oculos_de_sol.jpg" class="card-img-top" alt="Produto 3">
-          <div class="card-body">
-            <h5 class="card-title">Óculos de Sol</h5>
-            <p class="card-text">R$ 119,90</p>
-          </div>
-        </div>
-      </div>
+    <div id="destaquesContainer" class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Produtos serão carregados dinamicamente -->
     </div>
   </section>
 
@@ -73,6 +47,8 @@
     <p>&copy; 2025 Atlântica Store. Todos os direitos reservados.</p>
   </footer>
 </div>
-<script src="js/app.js"></script>
+
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/destaques.js"></script>
 </body>
 </html>
