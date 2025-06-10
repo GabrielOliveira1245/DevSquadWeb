@@ -24,7 +24,16 @@ class ProdutoController extends Controller
 
     public function index()
     {
-        $produtos = Produto::all();
+        $produtos = Produto::all()->map(function ($produto) {
+            if ($produto->imagem) {
+                $produto->imagem_url = asset('storage/' . $produto->imagem);
+            } else {
+                $produto->imagem_url = null;
+            }
+
+            return $produto;
+        });
+
         return response([
             'data' => $produtos,
             'message' => 'Produtos recuperados com sucesso'
